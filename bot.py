@@ -494,8 +494,10 @@ async def reg_api(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     except:
         await update.message.reply_text("invalid API key.")
 
+        
+from bot_api_key import BOT_API_KEY
 
-app = ApplicationBuilder().token("BOT_TOKEN").build()
+app = ApplicationBuilder().token(BOT_API_KEY).build()
 
 app.add_handler(CommandHandler("reg_api", reg_api))
 app.add_handler(CommandHandler("art_gen", art_gen))
